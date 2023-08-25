@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/bookmarks/static/js/main.9abda6b1.js",
+    "index.html": "/bookmarks/index.html",
+    "main.9abda6b1.js.map": "/bookmarks/static/js/main.9abda6b1.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9abda6b1.js"
+  ]
+}
