@@ -1,0 +1,249 @@
+@import url("../../../app/styles/base-params.css")
+
+.bookamrkWrap
+  position: relative
+  &:hover
+    cursor: pointer
+    .changeBookmark, .deleteBookmark
+      visibility: block
+      opacity: 1
+  .changeBookmark, .deleteBookmark
+    position: absolute
+    top: 7px
+    right: 7px
+    z-index: 1
+    visibility: none
+    opacity: 0
+    transition: opacity 0.5s
+    transition-delay: 0.2s
+    &:hover
+      cursor: pointer
+      transform: scale(1.2)
+      path
+        fill: var(--svgBookamrkHover)
+    svg
+      width: 25px
+      height: 25px
+      path
+        fill: var(--svgBookamrk)
+  .deleteBookmark
+    top: 7px
+    left: 7px
+    right: auto
+
+.bookmark
+  position: relative
+  display: block
+  align-self: flex-start
+  width: 250px
+  padding-bottom: 5px
+  border-radius: 8px
+  border: 2px solid var(--color2)
+  background-color: var(--bgDescriptionBookamrk)
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px
+  text-decoration: none
+  overflow: hidden
+  &:hover
+    filter: contrast(1.5)
+
+// .main-inner
+//   position: relative
+//   &:nth-child(3)
+//     border-top: 1px solid var(--svgControl)
+
+.inner
+  padding: 0 10px
+
+.preview
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 94px
+  background-color: var(--bgPreviewBookamrk)
+  img
+    width: 70px
+    height: 70px
+    margin: 10px
+    border-radius: 50%
+    background-color: #D1E8E2
+
+.title
+  text-align: center
+  padding: 10px 10px
+  color: var(--colorTitleBookamrk)
+  background-color: var(--bgTitleBookamrk)
+
+.description
+  margin: 5px 0
+  margin-bottom: 0
+  color: var(--colorDescriptionBookamrk)
+
+.tags
+  display: flex
+  flex-wrap: wrap
+  column-gap: 10px
+  margin: 5px 0
+  margin-bottom: 0
+  padding: 0
+  list-style-type: none
+  .tags-item
+    margin: 0
+
+.style-2
+  .tags
+    display: none
+
+.style-3
+  .description
+    display: none
+
+.style-4
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-5
+  .title
+    display: none
+  .description
+    display: none
+
+.style-6
+  .title
+    display: none
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-7
+  .preview
+    display: none
+
+.style-8
+  .preview
+    display: none
+  .tags
+    display: none
+
+.style-9
+  .preview
+    display: none
+  .description
+    display: none
+
+.style-10
+  .preview
+    display: none
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-11
+  .title
+    display: none
+
+.style-12
+  .preview
+    display: none
+  .title
+    display: none
+
+.style-13
+  .preview
+    display: none
+  .title
+    display: none
+  .tags
+    display: none
+
+.style-14
+  width: auto
+  border: 2px solid transparent
+  .preview
+  .title
+    display: none
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-15
+  width: auto
+  border: 2px solid transparent
+  .title
+    display: none
+  .description
+    display: none
+
+.style-16
+  width: 100px
+  height: 100px
+  border: 0
+  padding: 0
+  background-color: transparent
+  border-radius: 50%
+  margin-top: 20px
+  .preview
+    img
+      width: 100px
+      height: 100px
+      margin: 0
+  .title
+    display: none
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-17
+  width: auto
+  max-width: 150px
+  height: auto
+  border: 0
+  padding: 0
+  background-color: transparent
+  box-shadow: none
+  margin-top: 20px
+  .preview
+    width: 100px
+    border-radius: 50%
+    margin: 0 auto
+    img
+      width: 100px
+      height: 100px
+      margin: 0
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px
+  .title
+    background-color: transparent
+  .description
+    display: none
+  .tags
+    display: none
+
+.style-18
+  width: auto
+  max-width: 200px
+  height: auto
+  border: 0
+  padding: 0
+  background-color: transparent
+  box-shadow: none
+  margin-top: 20px
+  .preview
+    width: 100px
+    border-radius: 50%
+    margin: 0 auto
+    img
+      width: 100px
+      height: 100px
+      margin: 0
+      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px
+  .title
+    display: none
+  .tags
+    display: none

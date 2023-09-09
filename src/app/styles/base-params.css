@@ -1,0 +1,46 @@
+:root {
+  --fontFamilyDef:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  --colorDef1: #ddd;
+  --colorDef2: #333;
+  --fontSizeDef1: 14px;
+  --fontSizeDef2: 18px;
+  --fontSizeDef3: 24px;
+  --сolorA1: var(--colorDef2);
+  --сolorA2: var(--colorDef1);
+  --сolorH: var(--colorDef2);
+  --сolorP: var(--colorDef2);
+
+  --color1: #4d5d49;
+  --color2: #3db12b;
+  --color3: #4d5d49;
+  --color4: #3db12b;
+  --color5: #D1D7E0;
+  --colorH: var(--colorDef1);
+  --colorP: var(--colorDef1);
+  --colorA1: var(--colorDef1);
+  --colorA2: var(--color2);
+  --colorLogo: #D1E8E2;
+  --colorTitleBookamrk: #ddd;
+  --colorDescriptionBookamrk: #D1D7E0;
+  --colorControl: #D1D7E0;
+  --colorControlHover: #333;
+
+  --bgBody: #293e28;
+  --bgHeader: #222923;
+  --bgMenu: #222923;
+  --bgMain: #464646;
+  --bgAside: #222923;
+  --bgPreviewBookamrk: #516f4f;
+  --bgTitleBookamrk: #516f4f;
+  --bgDescriptionBookamrk: #222923;
+  --bgControl: #516f4f;
+  --bgControlHover: #D1D7E0;
+
+  --svgLogo: #3db12b;
+  --svgBookamrk: #333;
+  --svgBookamrkHover: #666666;
+  --svgControl: #D1D7E0;
+  --svgControlHover: #464646;
+}

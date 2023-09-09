@@ -1,0 +1,45 @@
+import { useState } from "react";
+import css from "./BaseSelect.module.sass";
+
+const BaseSelect = ({ styles, options }:any) => {
+
+	const [select, setSelect] = useState({ open: false, value: 0, text: "Опция 1" });
+
+	const handlerClickToggle = (e:any) => {
+		if (e.target.getAttribute("data-number"))
+			setSelect({
+				open: !select.open,
+				value: Number(e.target.getAttribute("data-number")),
+				text: e.target.textContent.trim()
+			});
+		else
+			setSelect({
+				...select,
+				open: !select.open,
+			});
+	}
+
+	const classNamesToggle = `${css.select} ${select.open ? css.open : css.close}`;
+
+	return (
+		<div className={css.main}>
+			<div className={classNamesToggle}
+				onClick={handlerClickToggle}
+				style={styles}
+			>
+				<div className={css["option-title"]}>
+					<span>{options?.title || "Опции"}</span>
+				</div>
+				<div className={css["option-wrap"]}>
+					{
+						options?.arrOption?.map((elem:any, i:any) => {
+							return <div key={i} className={css.option} data-number={i}>{elem}</div>
+						}) || <div className={css.option} data-number="0">Опция</div>
+					}
+				</div>
+			</div>
+		</div >
+	);
+}
+
+export { BaseSelect };
