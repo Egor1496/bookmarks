@@ -70,7 +70,7 @@ const TagСloud = () => {
                 text={el}
                 styleNameList={[
                   "smallStyle",
-                  activeTags.toLowerCase() === el.toLowerCase() && "buttonActive"
+                  activeTags.toLowerCase() === el.toLowerCase() ? "buttonActive" : ""
                 ]}
                 callBack={() => { onClickTags(el) }}
               >

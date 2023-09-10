@@ -47,7 +47,7 @@ const GroupLinks = () => {
               callBack={() => { onClickGroup(el, isPressed) }}
               styleNameList={[
                 "transparentStyle",
-                isPressed && "buttonActive"
+                isPressed? "buttonActive" : ""
               ]}
             ><AiFillFolderOpen /></BaseButton>
           )

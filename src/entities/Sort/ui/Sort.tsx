@@ -73,7 +73,7 @@ const Sort = () => {
     <div className={sass.main}>
       <BaseButton
         text="Сортировка"
-        styleNameList={["transparentStyle", modalActive && "buttonActive"]}
+        styleNameList={["transparentStyle", modalActive ? "buttonActive" : ""]}
         callBack={() => setModalActive(true)}
       >
         <TbArrowsTransferDown />

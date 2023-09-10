@@ -78,7 +78,7 @@ function UIKit() {
 					<BaseButton styleName="transparentStyle" text="Кнопка" ><DiHtml5 /></BaseButton>
 					<BaseButton text="Жми" styleName="iconTop"><DiHtml5 /></BaseButton>
 					<BaseButton text="Кнопка" styleName="iconRight"><SiCss3 /></BaseButton>
-					<BaseButton text="Кнопка" styleName="iconLeft"><DiJsBadge /></BaseButton>
+					<BaseButton text="Кнопка"><DiJsBadge /></BaseButton>
 					<BaseButton text="Кнопка" styleName="iconBottom"><FaReact /></BaseButton>
 				</GridСell>
 				<GridСell>
@@ -92,7 +92,7 @@ function UIKit() {
 					<BaseButton styleName="smallStyle" text="Кнопка" />
 					<BaseButton disabled text="Жми" styleName="iconTop"><IoAccessibilitySharp /></BaseButton>
 					<BaseButton disabled text="Кнопка" styleName="iconRight"><HiCheckCircle /></BaseButton>
-					<BaseButton disabled text="Кнопка" styleName="iconLeft"><HiMail /></BaseButton>
+					<BaseButton disabled text="Кнопка"><HiMail /></BaseButton>
 					<BaseButton disabled text="Кнопка" styleName="iconBottom"><DiCodeigniter /></BaseButton>
 				</GridСell>
 			</Grid>

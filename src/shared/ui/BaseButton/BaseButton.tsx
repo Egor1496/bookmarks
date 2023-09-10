@@ -1,24 +1,26 @@
 import sass from "./BaseButton.module.sass";
 
-const BaseButton = (props:any) => {
+import { propsTypes } from "./types"
+
+const BaseButton = (props:propsTypes) => {
 
 	const {
-		text,
-		css,
-		styleName,
+		text = "",
+		css = {},
+		styleName = "",
 		styleNameList = [],
-		disabled,
-		callBack,
-		children,
-	} = props;
+		disabled = false,
+		callBack = () => {},
+		children = null,
+	}:propsTypes = props;
 
-	let classNamesButton = `${sass[styleName] || ""}`;
+	let classNamesButton:string = `${sass[styleName] || ""}`;
 
 	for (let i = 0; i < styleNameList.length; i++) {
 		classNamesButton += " " + (sass[styleNameList[i]] || "");
 	}
 
-	const handlerClickButton = (e:any) => callBack(e);
+	const handlerClickButton = (e: React.MouseEvent<HTMLButtonElement>) => callBack(e);
 
 	return (
 		<div className={sass.main}>
