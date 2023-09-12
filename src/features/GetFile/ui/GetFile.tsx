@@ -31,7 +31,7 @@ const GetFile = () => {
 
   return (
     <div className={sass.main}>
-      <Notification state={notification} setState={setNotification} />
+      <Notification state={notification} />
       <BaseButton
         text="Скачать"
         callBack={onAcept}>

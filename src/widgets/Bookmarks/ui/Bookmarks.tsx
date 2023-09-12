@@ -61,7 +61,7 @@ const Bookmarks = ({ styleNumber }:any) => {
 
   return (
     <>
-      <Notification state={notification} setState={setNotification} />
+      <Notification state={notification} />
       <DialogModal
         modalTitle={`Удалить "${form.title}" ?`}
         textAccept="Удалить"

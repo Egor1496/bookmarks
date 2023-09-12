@@ -2,18 +2,27 @@ import sass from "./BaseModal.module.sass";
 
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const BaseModal = (props:any) => {
+type propsTypse = {
+	cssInner?: {};
+	cssBg?: {};
+	cssModal?: {};
+	children?: React.ReactNode;
+	active?:boolean;
+	setActive?:(newState:boolean) => void;
+}
+
+const BaseModal = (props:propsTypse) => {
 	const {
 		cssInner,
 		cssBg,
 		cssModal,
 		children,
-		active,
-		setActive
+		active = false,
+		setActive = () => {}
 	} = props;
 
 	const handlerClickClose = () => {
-		setActive(false)
+		setActive(false);
 	}
 
 	return (

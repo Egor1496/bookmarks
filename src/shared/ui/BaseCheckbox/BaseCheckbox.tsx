@@ -1,6 +1,9 @@
 import css from "./BaseCheckbox.module.sass";
 
-const BaseCheckbox = ({ disabled }:any) => {
+type propsTypes = { disabled?:boolean; }
+
+const BaseCheckbox = (props:propsTypes) => {
+	const { disabled } = props;
 	return (
 		<div className={`${css["check"]}`}>
 			<input type="checkbox" disabled={disabled} />

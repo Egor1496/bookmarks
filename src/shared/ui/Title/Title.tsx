@@ -1,13 +1,32 @@
-import css from "./Title.module.sass";
+import sass from "./Title.module.sass";
 
-const Title = ({ text, style, children, type, floatIcon, BorderStyle }:any) => {
+type propsTypse = {
+	text?:string;
+	style?:{};
+	type?:string;
+	floatIcon?:string;
+	BorderStyle?:string;
+	children?: React.ReactNode;
+}
+
+const Title = (props:propsTypse) => {
+
+	const {
+		text,
+		style,
+		children,
+		type = "",
+		floatIcon = "",
+		BorderStyle = ""
+	} = props;
+
 	return (
-		<div className={css.main} >
+		<div className={sass.main} >
 			<div className={`
-				${css.title}
-				${css[type]}
-				${css[floatIcon]}
-				${css[BorderStyle]}
+				${sass.title}
+				${sass[type]}
+				${sass[floatIcon]}
+				${sass[BorderStyle]}
 			`} style={style}>{children}{text}</div>
 		</div >
 	);

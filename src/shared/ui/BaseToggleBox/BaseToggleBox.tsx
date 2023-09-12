@@ -5,7 +5,7 @@ const BaseToggleBox = () => {
 
 	const [isChecked, setChecked] = useState(false);
 
-	const handlerChangeInput = (e:any) => setChecked(e.target.checked);
+	const handlerChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => setChecked(e.target.checked);
 
 	return (
 		<div className={css.main}>

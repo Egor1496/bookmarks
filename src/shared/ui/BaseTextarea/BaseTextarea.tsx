@@ -1,13 +1,21 @@
 import sass from "./BaseTextarea.module.sass";
 
-const BaseTextarea = (props:any) => {
+type propsTypse = {
+	state?:string;
+	setState?:(newState:string) => void;
+	readonly?:boolean;
+	placeholder?:string;
+	width?: string;
+}
+
+const BaseTextarea = (props:propsTypse) => {
 
 	const {
 		state,
-		setState,
+		setState = () => {},
 		readonly,
 		placeholder = "",
-		width
+		width = ""
 	} = props;
 
 	const handlerChangeTextarea = (e:any) => setState(e.target.value);

@@ -1,7 +1,7 @@
 import {
 	BaseButton, BaseInput, BaseTextarea,
-	BaseCheckbox, BaseRadiocheck,
-	BaseToggleBox, BaseToggleRadio, BaseSwitchRadio,
+	BaseCheckbox, BaseToggleBox,
+	BaseToggleRadio, BaseSwitchRadio,
 	BaseSelect,
 	MyLabel, Br, Grid, GridСell, Title,
 } from "../../../shared/ui";
@@ -37,7 +37,7 @@ function UIKit() {
 					<Title text="Заголовок" type="h1" BorderStyle="left" />
 					<Title text="Заголовок" type="h2" BorderStyle="left" />
 					<BaseButton text="Кнопка" />
-					<MyLabel labelText="Описание"><BaseInput defaultValue="По умолчанию"><HiCheckCircle /></BaseInput></MyLabel>
+					<MyLabel labelText="Описание"><BaseInput><HiCheckCircle /></BaseInput></MyLabel>
 					<MyLabel labelText="Описание"><BaseTextarea placeholder="Пустой" /></MyLabel>
 				</GridСell>
 				<GridСell>
@@ -45,7 +45,7 @@ function UIKit() {
 					<Title text="Заголовок" BorderStyle="borderBottom"> <FaReact /> </Title>
 					<BaseButton text="Кнопка" />
 					<MyLabel labelText="Описание" ><BaseInput readonly placeholder="Пустой" /></MyLabel>
-					<MyLabel labelText="Описание" ><BaseTextarea readonly defaultValue="По умолчанию" /></MyLabel>
+					<MyLabel labelText="Описание" ><BaseTextarea readonly /></MyLabel>
 				</GridСell>
 				<GridСell>
 					<Title text="Заголовок" floatIcon="iconRight" BorderStyle="borderleft"> <FaReact /> </Title>
@@ -63,12 +63,10 @@ function UIKit() {
 					<MyLabel labelText="Переключить" position="right"><BaseToggleRadio /></MyLabel></GridСell>
 				<GridСell>
 					<MyLabel labelText="Переключить"><BaseCheckbox /></MyLabel>
-					<MyLabel labelText="Переключить" position="right"><BaseRadiocheck /></MyLabel>
 					<MyLabel labelText="Переключить" position="bottom"><BaseSwitchRadio /></MyLabel>
 				</GridСell>
 				<GridСell>
 					<MyLabel labelText="Переключить"><BaseCheckbox disabled /></MyLabel>
-					<MyLabel labelText="Переключить" position="right"><BaseRadiocheck disabled /></MyLabel>
 					<MyLabel labelText="Переключить" position="bottom"><BaseSwitchRadio disabled /></MyLabel>
 				</GridСell>
 			</Grid>

@@ -1,7 +1,20 @@
 import sass from "./Notification.module.sass";
 import { BiError } from "react-icons/bi"
 
-const Notification = (props:any) => {
+type stateTypse = {
+	text?: string;
+	style?: {};
+	description?: string;
+	alarm?: boolean;
+	active?: boolean;
+}
+
+type propsTypse = {
+	state?:stateTypse;
+	children?: React.ReactNode;
+}
+
+const Notification = (props:propsTypse) => {
 	const {
 		children = null,
 		state = {

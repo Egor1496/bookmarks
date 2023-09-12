@@ -1,6 +1,6 @@
 import sass from "./Br.module.sass";
 
-const Br = ({ style }:any) => {
+const Br = ({ style }:{ style?:{} }) => {
 	return (
 		<div className={sass.main} >
 			<div className={`${sass.border}`} style={style} />

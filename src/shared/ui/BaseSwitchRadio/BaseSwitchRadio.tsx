@@ -1,6 +1,10 @@
 import css from "./BaseSwitchRadio.module.sass";
 
-const BaseSwitchRadio = ({ disabled }:any) => {
+type propsTypse = {
+	disabled?:boolean;
+}
+
+const BaseSwitchRadio = ({ disabled }:propsTypse) => {
 	return (
 		<div className={`${css["switch"]}`}>
 			<input type="checkbox" className={`${css["switch"]}`} disabled={disabled} />

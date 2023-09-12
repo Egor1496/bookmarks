@@ -44,7 +44,7 @@ const LoadBookmark = () => {
 
   return (
     <div className={sass.main}>
-      <Notification state={notification} setState={setNotification} />
+      <Notification state={notification} />
       <BaseModal
         active={modalActive}
         setActive={modalSetActive}

@@ -1,17 +1,27 @@
 import { useState } from "react";
-import css from "./BaseToggleRadio.module.css";
+import sass from "./BaseToggleRadio.module.sass";
 
-const BaseToggleRadio = ({ onClickChange, defaultChecked = false }:any) => {
+type propsTypse = {
+	onClickChange?: (e:boolean) => void;
+	defaultChecked?: boolean;
+}
+
+const BaseToggleRadio = (props:propsTypse) => {
+	const {
+		onClickChange = () => {},
+		defaultChecked = false
+	} = props;
+
 	const [isChecked, setIsChecked] = useState(defaultChecked);
 
-	const handlerChangeInput = (e:any) => {
+	const handlerChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
 		setIsChecked(e.target.checked);
 		onClickChange(e.target.checked);
 	}
 
 	return (
-		<div className={`${css["switch_wrap"]}`}>
-			<input type="checkbox" className={`${css["switch"]}`}
+		<div className={`${sass["switch_wrap"]}`}>
+			<input type="checkbox" className={`${sass["switch"]}`}
 				checked={isChecked}
 				onChange={handlerChangeInput}
 			/>

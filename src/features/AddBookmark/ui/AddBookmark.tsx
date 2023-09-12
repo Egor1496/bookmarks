@@ -35,7 +35,7 @@ const AddBookmark = () => {
 
   return (
     <div className={sass.main}>
-      <Notification state={notification} setState={setNotification} />
+      <Notification state={notification} />
       <BookmarkModal
         onАccept={(newBookmark:any) => {
           bookmarksArray.uploadBookmarks({ ...newBookmark });

@@ -1,6 +1,6 @@
 import sass from "./HeaderLogo.module.sass";
 
-const HeaderLogo = ({ text }:any) => {
+const HeaderLogo = ({ text }:{ text?: string; }) => {
 	return (
 		<div className={sass.logoWrap}>
 			<div className={sass.after}></div>
