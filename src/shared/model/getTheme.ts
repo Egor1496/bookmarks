@@ -1,8 +1,40 @@
-function getRandomInt(max:any) {
+function getRandomInt(max:number) {
 	return Math.floor(Math.random() * max);
 }
 
-const BASE_PARAMS:any = [
+export type BASE_PARAMS_TYPE = {
+	color1: string,
+	color2: string,
+	color3: string,
+	color4: string,
+	color5: string,
+	сolorH?: string,
+	сolorP?: string,
+	сolorA1?: string,
+	сolorA2?: string,
+	colorLogo: string,
+	colorTitleBookamrk: string,
+	colorDescriptionBookamrk: string,
+	colorControl: string,
+	colorControlHover: string,
+	bgBody: string,
+	bgHeader: string,
+	bgMenu: string,
+	bgMain: string,
+	bgAside: string,
+	bgPreviewBookamrk:string,
+	bgTitleBookamrk:string,
+	bgDescriptionBookamrk: string,
+	bgControl:string,
+	bgControlHover: string,
+	svgLogo: string,
+	svgBookamrk: string,
+	svgBookamrkHover: string,
+	svgControl: string,
+	svgControlHover: string,
+};
+
+const BASE_PARAMS:BASE_PARAMS_TYPE[] = [
 	{
 		color1: "#c2c2c2",
 		color2: "#333",

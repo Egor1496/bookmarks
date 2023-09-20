@@ -2,14 +2,32 @@ import sass from "./BookmarkModal.module.sass";
 
 import { BaseButton, BaseInput, BaseModal, BaseTextarea, MyLabel } from "../../../shared/ui";
 
-const BookmarkModal = (props:any) => {
+type stateTypse = {
+  id?: number | undefined;
+  title?: string;
+  description?: string;
+  link?: string;
+  tags?: string;
+  group?: string;
+}
+
+type propsTypse = {
+  modalActive?:boolean;
+  modalSetActive?:(isActive:boolean) => void;
+  modalTitle?:string;
+  onАccept?:(newState:stateTypse) => void;
+  state?:stateTypse;
+	setState?:(newState:stateTypse) => void;
+}
+
+const BookmarkModal = (props:propsTypse) => {
   const {
-    modalActive,
-    modalSetActive,
-    modalTitle,
-    onАccept,
-    state,
-    setState,
+    modalActive = false,
+    modalSetActive = () => {},
+    modalTitle = "",
+    onАccept = () => {},
+    state = {},
+    setState = () => {},
   } = props;
 
   const plhld = {
@@ -23,11 +41,11 @@ const BookmarkModal = (props:any) => {
   const handlerClickAccept = () => {
     modalSetActive(false);
     onАccept({
-      link: state.link,
-      title: state.title,
-      description: state.description,
-      tags: state.tags,
-      group: state.group,
+      link: state?.link,
+      title: state?.title,
+      description: state?.description,
+      tags: state?.tags,
+      group: state?.group,
     });
   }
 
@@ -41,14 +59,14 @@ const BookmarkModal = (props:any) => {
           <MyLabel labelText="Ссылка">
             <BaseInput
               state={state.link}
-              setState={(newState:any) => setState({ ...state, link: newState })}
+              setState={(newLink:string) => setState({ ...state, link: newLink })}
               placeholder={plhld.link}
             />
           </MyLabel>
           <MyLabel labelText="Заголовок">
             <BaseInput
               state={state.title}
-              setState={(newState:any) => setState({ ...state, title: newState })}
+              setState={(newTitle:string) => setState({ ...state, title: newTitle })}
               placeholder={plhld.title}
             />
           </MyLabel>
@@ -56,7 +74,7 @@ const BookmarkModal = (props:any) => {
         <MyLabel labelText="Описание" width="maxWidth">
           <BaseTextarea
             state={state.description}
-            setState={(newState:any) => setState({ ...state, description: newState })}
+            setState={(newDescr:string) => setState({ ...state, description: newDescr })}
             placeholder={plhld.description}
             width="maxWidth"
           />
@@ -65,14 +83,14 @@ const BookmarkModal = (props:any) => {
           <MyLabel labelText="Тэги">
             <BaseInput
               state={state.tags}
-              setState={(newState:any) => setState({ ...state, tags: newState })}
+              setState={(newTags:string) => setState({ ...state, tags: newTags })}
               placeholder={plhld.tags}
             />
           </MyLabel>
           <MyLabel labelText="Группа">
             <BaseInput
               state={state.group}
-              setState={(newState:any) => setState({ ...state, group: newState })}
+              setState={(newGroup:string) => setState({ ...state, group: newGroup })}
               placeholder={plhld.group}
             />
           </MyLabel>

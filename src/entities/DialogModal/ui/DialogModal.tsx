@@ -2,16 +2,26 @@ import sass from "./DialogModal.module.sass";
 
 import { BaseButton, BaseModal } from "../../../shared/ui";
 
-const DialogModal = (props:any) => {
+type propsTypse = {
+  modalActive?: boolean;
+  modalSetActive?:(isActive:boolean) => void;
+  onАccept?:() => void;
+  modalTitle?:string;
+  modalDescription?:string;
+  textAccept?:string;
+  textСancele?:string;
+}
+
+const DialogModal = (props:propsTypse) => {
 
   const {
-    modalActive,
-    modalSetActive,
-    onАccept,
-    modalTitle,
-    modalDescription,
-    textAccept,
-    textСancele
+    modalActive = false,
+    modalSetActive = () => {},
+    onАccept = () => {},
+    modalTitle = "",
+    modalDescription = "",
+    textAccept = "",
+    textСancele = ""
   } = props;
 
   const handlerCallbackAccept = () => { modalSetActive(false); onАccept(); }

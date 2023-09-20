@@ -8,10 +8,10 @@ import { LocalStorage, sendMesageNotification } from "../../../shared/model";
 
 const GetFile = () => {
 
+  const [notification, setNotification] = useState<object>();
+
   const onAcept = () => {
-    const prefix = '{"bookmarks":';
-    const postfix = '}';
-    downloadTxtFile(`${prefix}${LocalStorage.getStore("bookmarks")}${postfix}`);
+    downloadTxtFile(`${LocalStorage.getStore("bookmarks")}`);
   }
 
   const downloadTxtFile = (text:any) => {
@@ -21,13 +21,11 @@ const GetFile = () => {
       { type: 'text/plain;charset=utf-8' }
     );
     elem.href = URL.createObjectURL(file);
-    elem.download = "all bookmarks (json).txt";
+    elem.download = "bookmarkss(json).txt";
     document.body.appendChild(elem);
     elem.click();
     sendMesageNotification({ text: "Файл скачен!" }, setNotification);
   }
-
-  const [notification, setNotification] = useState();
 
   return (
     <div className={sass.main}>

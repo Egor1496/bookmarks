@@ -1,11 +1,13 @@
-import { BASE_PARAMS } from "../../../shared/model";
+import { BASE_PARAMS, BASE_PARAMS_TYPE } from "../../../shared/model";
 
-const ThemeParams = ({ thisNumberTheme }:any) => {
+const ThemeParams = ({ thisNumberTheme }:{ thisNumberTheme: number }) => {
 
   let style = ``;
 
-  for (let key in BASE_PARAMS[thisNumberTheme]) {
-    style += `  --${key}: ${BASE_PARAMS[thisNumberTheme][key]}; \n`;
+  const styleObj = BASE_PARAMS[thisNumberTheme];
+
+  for (let key in styleObj) {
+    style += `  --${key}: ${styleObj[key as keyof BASE_PARAMS_TYPE]}; \n`;
   }
 
   return (

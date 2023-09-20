@@ -1,8 +1,8 @@
 class LocalStorage {
-	static setStore(key = "null", value = "") {
+	static setStore(key:string = "null", value:string = "") {
 		localStorage.setItem(key, value);
 	}
-	static getStore(key = "null", defaultValue = "") {
+	static getStore(key:string = "null", defaultValue:string = "") {
 		return localStorage.getItem(key) || defaultValue;
 	}
 }

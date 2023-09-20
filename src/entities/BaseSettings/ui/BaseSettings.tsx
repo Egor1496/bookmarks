@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-import css from "./BaseSettings.module.sass";
+import sass from "./BaseSettings.module.sass";
 import { IoMdSettings } from "react-icons/io";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
@@ -10,19 +10,28 @@ import { ThemeSelect } from "../../../entities"; //!!!!!!!!!!!!!!!! fsd
 import { LocalStorage } from "../../../shared/model";
 import { BaseButton, BaseToggleRadio } from "../../../shared/ui";
 
+type contextTypse = {
+  enableGroups?:boolean;
+  setEnableGroups?:(newState:boolean) => void;
+  enableTags?:boolean;
+  setEnableTags?:(newState:boolean) => void;
+  enableBg?:boolean;
+  setEnableBg?:(newState:boolean) => void;
+}
+
 const BaseSettings = () => {
   const {
-    enableGroups,
-    setEnableGroups,
-    enableTags,
-    setEnableTags,
-    enableBg,
-    setEnableBg,
-  }:any = useContext(store);
+    enableGroups = false,
+    setEnableGroups = () => {},
+    enableTags = false,
+    setEnableTags = () => {},
+    enableBg = false,
+    setEnableBg = () => {},
+  }:contextTypse = useContext(store);
 
   const storageTheme = LocalStorage.getStore("themeNumber", String(1));
 
-  const [numberTheme, setTheme] = useState(storageTheme);
+  const [numberTheme, setTheme] = useState(Number(storageTheme));
 
   const [themeModal, setModalActive] = useState(false);
 
@@ -34,44 +43,44 @@ const BaseSettings = () => {
     setModalActive(false)
   }
 
-  const enableSelectGroup = (isChecked:any) => {
+  const enableSelectGroup = (isChecked:boolean) => {
     setEnableGroups(isChecked);
     LocalStorage.setStore("enableGroups", String(Number(isChecked)));
   }
 
-  const enableSelectTags = (isChecked:any) => {
+  const enableSelectTags = (isChecked:boolean) => {
     setEnableTags(isChecked);
     LocalStorage.setStore("enableTags", String(Number(isChecked)));
   }
 
-  const enableSelectBg = (isChecked:any) => {
+  const enableSelectBg = (isChecked:boolean) => {
     setEnableBg(isChecked);
     LocalStorage.setStore("enableBg", String(Number(isChecked)));
   }
 
 
   return (
-    <div className={css.settings}>
+    <div className={sass.settings}>
       <BaseButton styleNameList={["transparentStyle", "baseSettings"]} callBack={handlerClickSettings}><IoMdSettings /></BaseButton>
       {
         themeModal && (
           <>
-            <div className={css.modalBg}
+            <div className={sass.modalBg}
               onClick={handlerClickClose}></div>
-            <div className={css.modal}>
-              <div className={css.close} onClick={handlerClickClose} >
+            <div className={sass.modal}>
+              <div className={sass.close} onClick={handlerClickClose} >
                 <AiOutlineCloseCircle />
               </div>
-              <div className={css["enable-wrap"]}>
-                <div className={css["groups-enable"]}>
+              <div className={sass["enable-wrap"]}>
+                <div className={sass["groups-enable"]}>
                   <h2>Группы</h2>
                   <BaseToggleRadio onClickChange={enableSelectGroup} defaultChecked={enableGroups} />
                 </div>
-                <div className={css["tags-enable"]}>
+                <div className={sass["tags-enable"]}>
                   <h2>Тэги</h2>
                   <BaseToggleRadio onClickChange={enableSelectTags} defaultChecked={enableTags} />
                 </div>
-                <div className={css["bg-enable"]}>
+                <div className={sass["bg-enable"]}>
                   <h2>Фон</h2>
                   <BaseToggleRadio onClickChange={enableSelectBg} defaultChecked={enableBg} />
                 </div>

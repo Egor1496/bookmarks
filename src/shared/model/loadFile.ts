@@ -1,5 +1,7 @@
+export type LoadFileCallbackType = (bookmarksList: string | ArrayBuffer | null) => void;
+
 class LoadFile {
-	static onDrop(e:any, callback:any) {
+	static onDrop(e:any, callback:LoadFileCallbackType) {
 		e.preventDefault();
 
 		if (e.dataTransfer.items) {
@@ -19,7 +21,7 @@ class LoadFile {
 		}
 	}
 
-	static read(input:any, callback:any) {
+	static read(input:any, callback:LoadFileCallbackType) {
 		const file = input.files[0];
 		const reader = new FileReader();
 

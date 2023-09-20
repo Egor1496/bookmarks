@@ -23,7 +23,7 @@ const AddBookmark = () => {
 
   const [modalActive, modalSetActive] = useState(false);
 
-  const [bookmarkState, setBookmarkState] = useState({
+  const [bookmarkState, setBookmarkState] = useState<any>({
     link: "https://www.youtube.com",
     title: "",
     description: "",
@@ -31,7 +31,7 @@ const AddBookmark = () => {
     group: ""
   });
 
-  const [notification, setNotification] = useState();
+  const [notification, setNotification] = useState<object>();
 
   return (
     <div className={sass.main}>

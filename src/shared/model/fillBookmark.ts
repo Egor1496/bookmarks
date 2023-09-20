@@ -1,22 +1,24 @@
 import { getURL } from "./URL";
 
+import { URLType } from "../../processes"
+
 class FillBookmark {
-	static getId(id:any) {
+	static getId(id:number) {
 		const filledId = id;
 		return filledId;
 	}
 
-	static getLink(link = "") {
+	static getLink(link:string = "") {
 		const filledLink = link;
 		return filledLink;
 	}
 
-	static getImgLink(url:any) {
+	static getImgLink(url:URLType) {
 		const filledimgLink = url.hostname;
 		return filledimgLink;
 	}
 
-	static getTitle(title = "", link:any) {
+	static getTitle(title:string = "", link:string) {
 		const url = getURL(link);
 		let filledTitle = title,
 			isTitle = title.replace(/(.|,|-|_|;|:|'|)/gi, "");
@@ -28,17 +30,17 @@ class FillBookmark {
 		return filledTitle;
 	}
 
-	static getDescription(description = "") {
+	static getDescription(description:string = "") {
 		const filledDescription = description;
 		return filledDescription;
 	}
 
-	static getTags(tags = "") {
+	static getTags(tags:string = "") {
 		const filledTags = tags.trim() && tags.toLowerCase().trim().split(",");
 		return filledTags;
 	}
 
-	static getGroup(group = "") {
+	static getGroup(group:string = "") {
 		const filledGroup = group.trim() && group.toLowerCase().trim().split(",");
 		return filledGroup;
 	}

@@ -1,4 +1,15 @@
-const sendMesageNotification = (state:any, setState:any) => {
+type stateType = {
+	active?: boolean,
+	text?: string,
+	description?: string,
+	alarm?: boolean,
+	style?: object,
+	delay?: number;
+}
+
+type setStateType =  (state:stateType) => void;
+
+const sendMesageNotification = (state:stateType, setState:setStateType) => {
 	setState({
 		active: true,
 		text: state?.text,

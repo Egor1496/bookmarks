@@ -24,9 +24,9 @@ const Bookmarks = ({ styleNumber }:any) => {
 
   const [deleteModalActive, setDeleteModalActive] = useState(false);
   const [editModalActive, editModalSetActive] = useState(false);
-  const [notification, setNotification] = useState();
+  const [notification, setNotification] = useState<object>();
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<any>({
     id: 0,
     title:"..."
   });

@@ -7,7 +7,12 @@ import { FaCloudUploadAlt } from 'react-icons/fa';
 
 import { store } from "../../../processes";
 import { BaseModal, BaseButton, Notification } from "../../../shared/ui";
-import { FillBookmark, JsonHelper, sendMesageNotification, LoadFile } from "../../../shared/model";
+import {
+  FillBookmark,
+  JsonHelper,
+  sendMesageNotification,
+  LoadFile
+} from "../../../shared/model";
 
 const LoadBookmark = () => {
 
@@ -24,10 +29,10 @@ const LoadBookmark = () => {
 
   const [modalActive, modalSetActive] = useState(false);
 
-  const [notification, setNotification] = useState();
+  const [notification, setNotification] = useState<object>();
 
-  const loadObgect = (bookmarksList:any) => {
-    const obgBookmarks:any = JsonHelper.getObject(bookmarksList).bookmarks;
+  const loadObgect = (bookmarksList: string | ArrayBuffer | null):void => {
+    const obgBookmarks = JsonHelper.getObject(String(bookmarksList));
     obgBookmarks.forEach((el:any) =>  {
       el.title = FillBookmark.getTitle(el.title, el.link);
       bookmarksArray.uploadBookmarks({ ...el });

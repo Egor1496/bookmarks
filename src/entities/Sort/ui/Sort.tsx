@@ -23,7 +23,6 @@ const Sort = () => {
   const [modalActive, setModalActive] = useState(false);
 
   const [sortList, setSortList] = useState(JsonHelper.getObject(LocalStorage.getStore("sortList")) || sortListDefault);
-
   const [activeNum, setActiveNum] = useState(Number(LocalStorage.getStore("activeNum")) || ACTIVE_NUM_DEFAULT);
 
   const {
