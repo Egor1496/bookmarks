@@ -1,13 +1,15 @@
+import { bookmarksType } from "../../../processes"
+
 class SearchBookmarks {
-	static find(textSearch = "", bookmarks:any) {
+	static find(textSearch = "", bookmarks:bookmarksType[]) {
 		textSearch = textSearch.trim().toLowerCase();
 
 		if (!textSearch) return bookmarks;
 
-		return bookmarks.filter((elem:any) => {
-			let title = elem?.title || "",
-				description = elem?.description || "",
-				tags = elem?.tags || "";
+		return bookmarks.filter((elem) => {
+			let title = elem.title || "",
+				description = elem.description || "",
+				tags = elem.tags || "";
 
 			title = title.trim().toLowerCase();
 			description = description.trim().toLowerCase();

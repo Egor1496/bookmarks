@@ -1,5 +1,7 @@
+import { bookmarksType, filterType } from "../../../processes"
+
 class FilterBookmarks {
-	static getFiltered(filter = ["", ""], bookmarks:any) {
+	static getFiltered(filter:filterType = ["", ""], bookmarks:bookmarksType[]) {
 		let [groupNames, tagsNames] = filter;
 
 		if (Number(!groupNames) === 0 && Number(!tagsNames) === 0) return bookmarks;
@@ -7,9 +9,7 @@ class FilterBookmarks {
 		groupNames = groupNames.trim().toLocaleLowerCase();
 		tagsNames = tagsNames.trim().toLocaleLowerCase();
 
-		const filtered = bookmarks.filter((elem:any) => {
-			let suitableElem = false;
-
+		const filtered = bookmarks.filter((elem:bookmarksType) => {
 			const cleanGroup = elem.group.trim().toLowerCase();
 			const cleanTags = elem.tags.trim().toLowerCase();
 
@@ -19,9 +19,10 @@ class FilterBookmarks {
 			isSuitableGroup = cleanGroup === groupNames || groupNames === "";
 			isSuitableTags = Boolean(~cleanTags.indexOf(tagsNames) || tagsNames === "");
 
-			if (isSuitableGroup && isSuitableTags) suitableElem = elem;
-
-			return suitableElem;
+			if (isSuitableGroup && isSuitableTags)
+				return elem;
+			else
+				return false;
 		});
 
 		return filtered;

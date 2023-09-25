@@ -5,6 +5,13 @@ import { Groups } from "../../features";
 import { Tags } from "../../entities";
 import { LocalStorage, JsonHelper } from "../../shared/model";
 
+type sortValueType = "title" | "description" | "group" | "tags";
+
+type sortObgType = {
+	value: sortValueType;
+ 	sortType: boolean;
+}
+
 const bookmarksArray = new BookmarksArray(DEFAULT_BOOKMARKS_TMP);
 
 const useStorage = () => {
@@ -16,8 +23,8 @@ const useStorage = () => {
 	const [activeTags, setActiveTags] = useState(LocalStorage.getStore("activeTags") || "");
 	const [activeGroup, setActiveGroup] = useState(LocalStorage.getStore("activeGroup") || "");
 
-	const [filter, setFilter] = useState([activeGroup, activeTags]);
-	const [sort, setSort] = useState(JsonHelper.getObject(LocalStorage.getStore("sort")) || DEFAULT_TYPE_SORT);
+	const [filter, setFilter] = useState<[string, string]>([activeGroup, activeTags]);
+	const [sort, setSort] = useState<sortObgType>(JsonHelper.getObject(LocalStorage.getStore("sort")) || DEFAULT_TYPE_SORT);
 	const [bookmarks, setBookmarks] = useState(bookmarksArray.getBookmarks(filter, sort));
 
 	const allTags = tags.getTags(bookmarks);

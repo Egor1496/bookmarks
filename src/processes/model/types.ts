@@ -13,6 +13,21 @@ export interface URLType {
 	toString(): string;
 }
 
-// type bookmarksType = {
+export type bookmarksType = {
+	id: string,
+	link: string,
+	imgLink?: string,
+	title: string,
+	description: string,
+	tags: string,
+	group: string,
+}
 
-// }
+export type filterType = [string, string];
+
+export type sortValueType = "title" | "description" | "group" | "tags";
+
+export type sortObgType = {
+	value: sortValueType;
+ 	sortType: boolean;
+}

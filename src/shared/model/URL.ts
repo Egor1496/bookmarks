@@ -1,4 +1,4 @@
-const getURL = (str:string):object => {
+const getURL = (str:string) => {
 	return new URL(str);
 };
 
