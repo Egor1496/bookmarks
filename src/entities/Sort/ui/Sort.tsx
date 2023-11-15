@@ -4,7 +4,7 @@ import sass from "./Sort.module.sass"
 import { TbArrowsTransferDown } from 'react-icons/tb';
 import { FaSortAlphaDown, FaSortAlphaUpAlt } from 'react-icons/fa';
 
-import { store } from "../../../processes";
+import { store, sortListType } from "../../../processes";
 
 import { BaseButton } from "../../../shared/ui";
 import { LocalStorage, JsonHelper } from "../../../shared/model";
@@ -22,7 +22,7 @@ const Sort = () => {
 
   const [modalActive, setModalActive] = useState(false);
 
-  const [sortList, setSortList] = useState(JsonHelper.getObject(LocalStorage.getStore("sortList")) || sortListDefault);
+  const [sortList, setSortList] = useState(JsonHelper.getObject(LocalStorage.getStore("sortList")) as sortListType[] || sortListDefault);
   const [activeNum, setActiveNum] = useState(Number(LocalStorage.getStore("activeNum")) || ACTIVE_NUM_DEFAULT);
 
   const {
@@ -82,7 +82,7 @@ const Sort = () => {
           <>
             <ul className={sass.selectSort}>
               {
-                sortList.map((item:any, i:any) => {
+                sortList.map((item, i) => {
                   return (
                     <li
                       key={item.text}

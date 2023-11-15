@@ -10,7 +10,7 @@ import { ThemeSelect } from "../../../entities"; //!!!!!!!!!!!!!!!! fsd
 import { LocalStorage } from "../../../shared/model";
 import { BaseButton, BaseToggleRadio } from "../../../shared/ui";
 
-type contextTypse = {
+type contextTypes = {
   enableGroups?:boolean;
   setEnableGroups?:(newState:boolean) => void;
   enableTags?:boolean;
@@ -27,7 +27,7 @@ const BaseSettings = () => {
     setEnableTags = () => {},
     enableBg = false,
     setEnableBg = () => {},
-  }:contextTypse = useContext(store);
+  }:contextTypes = useContext(store);
 
   const storageTheme = LocalStorage.getStore("themeNumber", String(1));
 
@@ -57,7 +57,6 @@ const BaseSettings = () => {
     setEnableBg(isChecked);
     LocalStorage.setStore("enableBg", String(Number(isChecked)));
   }
-
 
   return (
     <div className={sass.settings}>

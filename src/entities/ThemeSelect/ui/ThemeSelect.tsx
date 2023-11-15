@@ -4,7 +4,16 @@ import { BaseButton } from "../../../shared/ui";
 import { LocalStorage } from "../../../shared/model";
 import { BASE_PARAMS } from "../../../shared/model";
 
-const ThemeSelect = ({ setTheme }:any) => {
+type propsType = {
+  setTheme: (numberTheme: number) => void;
+}
+
+const ThemeSelect = ({ setTheme }:propsType) => {
+
+  const callBackHandler = (i:number) => {
+    setTheme(i); LocalStorage.setStore("themeNumber", String(i))
+  }
+
   return (
     <div className={sass.main}>
       <h2 className={sass["theme-title"]}>Выбрать тему</h2>
@@ -13,7 +22,7 @@ const ThemeSelect = ({ setTheme }:any) => {
           [...Array(BASE_PARAMS.length)].map((el, i) => {
             return <BaseButton
               key={i}
-              callBack={() => { setTheme(i); LocalStorage.setStore("themeNumber", String(i)) }}
+              callBack={() => { callBackHandler(i) }}
               css={{ "backgroundColor": BASE_PARAMS[i]["color1"], "minWidth": "50px", "minHeight": "50px" }}
             >
               <div className={sass["border"]} style={{ "backgroundColor": BASE_PARAMS[i]["color2"] }}></div>

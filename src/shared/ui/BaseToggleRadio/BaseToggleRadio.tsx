@@ -1,12 +1,12 @@
 import { useState } from "react";
 import sass from "./BaseToggleRadio.module.sass";
 
-type propsTypse = {
+type propsType = {
 	onClickChange?: (e:boolean) => void;
 	defaultChecked?: boolean;
 }
 
-const BaseToggleRadio = (props:propsTypse) => {
+const BaseToggleRadio = (props:propsType) => {
 	const {
 		onClickChange = () => {},
 		defaultChecked = false

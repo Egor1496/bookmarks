@@ -1,6 +1,6 @@
 import sass from "./Title.module.sass";
 
-type propsTypse = {
+type propsType = {
 	text?:string;
 	style?:{};
 	type?:string;
@@ -9,7 +9,7 @@ type propsTypse = {
 	children?: React.ReactNode;
 }
 
-const Title = (props:propsTypse) => {
+const Title = (props:propsType) => {
 
 	const {
 		text,

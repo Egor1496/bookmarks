@@ -1,6 +1,6 @@
 import sass from "./BaseTextarea.module.sass";
 
-type propsTypse = {
+type propsType = {
 	state?:string;
 	setState?:(newState:string) => void;
 	readonly?:boolean;
@@ -8,7 +8,7 @@ type propsTypse = {
 	width?: string;
 }
 
-const BaseTextarea = (props:propsTypse) => {
+const BaseTextarea = (props:propsType) => {
 
 	const {
 		state,

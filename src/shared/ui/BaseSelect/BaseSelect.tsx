@@ -1,7 +1,7 @@
 import { useState } from "react";
 import css from "./BaseSelect.module.sass";
 
-type propsTypse = {
+type propsType = {
 	styles: {}
 	options: {
 		title: string;
@@ -10,7 +10,7 @@ type propsTypse = {
 	};
 }
 
-const BaseSelect = (props:propsTypse) => {
+const BaseSelect = (props:propsType) => {
 
 	const {
 		styles,

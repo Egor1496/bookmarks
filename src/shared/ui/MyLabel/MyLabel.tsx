@@ -1,13 +1,13 @@
 import sass from "./MyLabel.module.sass";
 
-type propsTypse = {
+type propsType = {
 	labelText?:string;
 	position?:string;
 	width?:string;
 	children?: React.ReactNode;
 }
 
-const MyLabel = (props:propsTypse) => {
+const MyLabel = (props:propsType) => {
 
 	const { labelText = "", children, position = "top", width="" } = props;
 

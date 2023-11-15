@@ -1,6 +1,6 @@
 import sass from "./BaseInput.module.sass";
 
-type propsTypse = {
+type propsTypes = {
 	state?:string;
 	setState?:(newState:string) => void;
 	readonly?:boolean;
@@ -8,7 +8,7 @@ type propsTypse = {
 	children?: React.ReactNode;
 }
 
-const BaseInput = (props:propsTypse) => {
+const BaseInput = (props:propsTypes) => {
 
 	const {
 		state = "",

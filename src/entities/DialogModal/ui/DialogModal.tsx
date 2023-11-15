@@ -2,7 +2,7 @@ import sass from "./DialogModal.module.sass";
 
 import { BaseButton, BaseModal } from "../../../shared/ui";
 
-type propsTypse = {
+type propsTypes = {
   modalActive?: boolean;
   modalSetActive?:(isActive:boolean) => void;
   onАccept?:() => void;
@@ -12,7 +12,7 @@ type propsTypse = {
   textСancele?:string;
 }
 
-const DialogModal = (props:propsTypse) => {
+const DialogModal = (props:propsTypes) => {
 
   const {
     modalActive = false,

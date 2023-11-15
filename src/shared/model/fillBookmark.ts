@@ -3,7 +3,7 @@ import { getURL } from "./URL";
 import { URLType } from "../../processes"
 
 class FillBookmark {
-	static getId(id:number) {
+	static getId(id:string) {
 		const filledId = id;
 		return filledId;
 	}

@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 import sass from "./LoadBookmark.module.sass"
 
-
 import { AiFillFileText } from 'react-icons/ai';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 
-import { store } from "../../../processes";
+import { store, bookmarksType } from "../../../processes";
 import { BaseModal, BaseButton, Notification } from "../../../shared/ui";
 import {
   FillBookmark,
@@ -32,8 +31,8 @@ const LoadBookmark = () => {
   const [notification, setNotification] = useState<object>();
 
   const loadObgect = (bookmarksList: string | ArrayBuffer | null):void => {
-    const obgBookmarks = JsonHelper.getObject(String(bookmarksList));
-    obgBookmarks.forEach((el:any) =>  {
+    const obgBookmarks = JsonHelper.getObject(String(bookmarksList)) as bookmarksType[];
+    obgBookmarks.forEach((el) =>  {
       el.title = FillBookmark.getTitle(el.title, el.link);
       bookmarksArray.uploadBookmarks({ ...el });
     });

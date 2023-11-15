@@ -4,7 +4,8 @@ class FilterBookmarks {
 	static getFiltered(filter:filterType = ["", ""], bookmarks:bookmarksType[]) {
 		let [groupNames, tagsNames] = filter;
 
-		if (Number(!groupNames) === 0 && Number(!tagsNames) === 0) return bookmarks;
+		if (!groupNames && !tagsNames)
+			return bookmarks;
 
 		groupNames = groupNames.trim().toLocaleLowerCase();
 		tagsNames = tagsNames.trim().toLocaleLowerCase();

@@ -2,7 +2,7 @@ import sass from "./BaseModal.module.sass";
 
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-type propsTypse = {
+type propsTypes = {
 	cssInner?: {};
 	cssBg?: {};
 	cssModal?: {};
@@ -11,7 +11,7 @@ type propsTypse = {
 	setActive?:(newState:boolean) => void;
 }
 
-const BaseModal = (props:propsTypse) => {
+const BaseModal = (props:propsTypes) => {
 	const {
 		cssInner,
 		cssBg,

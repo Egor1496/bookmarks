@@ -14,20 +14,27 @@ export interface URLType {
 }
 
 export type bookmarksType = {
-	id: string,
-	link: string,
-	imgLink?: string,
-	title: string,
-	description: string,
-	tags: string,
-	group: string,
+	id?: string;
+	link: string;
+	imgLink?: string;
+	title: string;
+	description: string;
+	tags: string;
+	group: string;
 }
 
 export type filterType = [string, string];
 
 export type sortValueType = "title" | "description" | "group" | "tags";
+export type sortTextType = "Заголовок" | "Описание" | "Папки" | "Тэги";
 
 export type sortObgType = {
 	value: sortValueType;
  	sortType: boolean;
+}
+
+export type sortListType = {
+	text: sortTextType,
+	value: sortValueType,
+	sortType: boolean
 }

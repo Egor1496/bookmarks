@@ -1,1 +1,40 @@
 Ломается фильтр при похожих названиях групп
+
+setState: React.Dispatch<React.SetStateAction<number>>;
+
+export declare interface AppProps {
+  children?: React.ReactNode; // best, accepts everything React can render
+  childrenElement: JSX.Element; // A single React element
+  style?: React.CSSProperties; // to pass through style props
+  onChange?: React.FormEventHandler<HTMLInputElement>; // form events! the generic parameter is the type of event.target
+  //  more info: https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase/#wrappingmirroring
+  props: Props & React.ComponentPropsWithoutRef<"button">; // to impersonate all the props of a button element and explicitly not forwarding its ref
+  props2: Props & React.ComponentPropsWithRef<MyButtonWithForwardRef>; // to impersonate all the props of MyButtonForwardedRef and explicitly forwarding its ref
+}
+
+import { Button } from "library"; // but doesn't export ButtonProps! oh no!
+type ButtonProps = React.ComponentProps<typeof Button>; // no problem! grab your own!
+type AlertButtonProps = Omit<ButtonProps, "onClick">; // modify
+const AlertButton = (props: AlertButtonProps) => (
+  <Button onClick={() => alert("hello")} {...props} />
+);
+
+// inside some library - return type { baz: number } is inferred but not exported
+function foo(bar: string) {
+  return { baz: 1 };
+}
+
+//  inside your app, if you need { baz: number }
+type FooReturn = ReturnType<typeof foo>; // { baz: number }
+
+typeof and instanceof: type query used for refinement
+keyof: get keys of an object. keyof T is an operator to tell you what values of k can be used for obj[k].
+Some misconceptions here.
+O[K]: property lookup
+[K in O]: mapped types
++ or - or readonly or ?: addition and subtraction and readonly and optional modifiers
+x ? Y : Z: Conditional types for generic types, type aliases, function parameter types
+!: Nonnull assertion for nullable types
+=: Generic type parameter default for generic types
+as: type assertion
+is: type guard for function return types
